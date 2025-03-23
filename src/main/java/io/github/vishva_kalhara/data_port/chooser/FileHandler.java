@@ -1,4 +1,4 @@
-package io.github.vishva_kalhara.data_port.util;
+package io.github.vishva_kalhara.data_port.chooser;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,22 +13,22 @@ public class FileHandler {
         this.fileChooser = new JFileChooser();
     }
 
-    public String chooseFile() {
-
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        return this.choose(fileChooser);
-    }
-
-    public String chooseFolder(){
-
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        return this.choose(fileChooser);
-    }
-
-
     public String choose(){
 
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        return this.choose(ChooseType.FILES_AND_DIRECTORIES);
+    }
+
+    public String choose(ChooseType type){
+
+        fileChooser.setFileSelectionMode(type.getValue());
+        return this.choose(fileChooser);
+    }
+
+    public String choose(ChooseType type, ChooserRules rules) throws ChooserException {
+
+        fileChooser.setFileSelectionMode(type.getValue());
+
+        rules.verify();
         return this.choose(fileChooser);
     }
 
