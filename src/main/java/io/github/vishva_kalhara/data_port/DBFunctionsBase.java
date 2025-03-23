@@ -74,7 +74,7 @@ public abstract class DBFunctionsBase implements DBFunctions {
      * @throws InterruptedException If the operations are interrupted.
      * @throws DataPortException If the operations are interrupted.
      */
-    protected boolean override(String backupFilePath) throws IOException, InterruptedException, DataPortException {
+    public boolean override(String backupFilePath) throws IOException, InterruptedException, DataPortException {
 
         boolean isDropped = this.drop();
         if (!isDropped) return false;
