@@ -6,7 +6,7 @@
 
     <groupId>io.github.vishva-kalhara</groupId>
     <artifactId>data-port</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 
     <name>Data Port</name>
     <description>Data Port is a lightweight Java library designed for seamless database management across MySQL, MariaDB, PostgreSQL, and SQL Server. It provides a simple API to create, drop, back up, restore, and override databases using efficient command-line executions. With Data Port, developers can automate database operations with minimal configuration, ensuring reliability and ease of use in development and production environments.</description>
